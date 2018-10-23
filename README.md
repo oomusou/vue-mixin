@@ -1,21 +1,3 @@
-# vue-todo-lis-api
+## Vue CLI .env + Node.js Demo
 
-## Project setup
-```
-yarn install
-```
-
-### Compiles and hot-reloads for development
-```
-yarn run serve
-```
-
-### Compiles and minifies for production
-```
-yarn run build
-```
-
-### Lints and fixes files
-```
-yarn run lint
-```
+Demo for http://oomusou.io/vue/env-node/
