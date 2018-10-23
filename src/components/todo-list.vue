@@ -11,20 +11,13 @@
 
 <script>
 import { fetchTodos } from '../api/todos.api';
-
-const finishItem = function(index) {
-  this.todos[index].completed = !this.todos[index].completed;
-};
-
-const addItem = function() {
-  const elem = { title: this.input, completed: false };
-  this.todos = [...this.todos, elem];
-};
-
-const error = e => console.log(e);
+import { myMixin } from '../mixins/my-mixin';
 
 const mounted = function() {
-  const response = res => this.todos = res.data.slice(0, 5);
+  const response = res =>
+    this.todos = res.data.slice(0, 5);
+
+  const error = e => console.log(e);
 
   fetchTodos()
     .then(response)
@@ -38,15 +31,10 @@ const data = function() {
   };
 };
 
-const methods = {
-  finishItem,
-  addItem,
-};
-
 export default {
   name: 'todo-list',
+  mixins: [myMixin],
   data,
-  methods,
   mounted,
 };
 </script>
